@@ -1,0 +1,46 @@
+.App {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, sans-serif;
+  background: #fff;
+}
+
+h2 {
+  text-align: right;
+  font-size: 24px;
+}
+
+.expense-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.expense-form input {
+  flex: 1;
+  padding: 8px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  background: #0077ff;
+  color: white;
+  border-radius: 6px;
+}
+
+.expense-list {
+  list-style: none;
+  padding: 0;
+}
+
+.expense-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
