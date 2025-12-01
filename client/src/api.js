@@ -1,5 +1,5 @@
 // src/api.js
-const API_URL = "http://localhost:8787"; // MCP server also exposes REST fallback here
+const API_URL = process.env.REACT_APP_API_URL || window.location.origin || "http://localhost:8787";
 
 export async function getExpenses() {
   const res = await fetch(`${API_URL}/expenses`);

@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
+    {
+      "src": "server/server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["server/expense-widget.html", "server/expenses.json"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/mcp(.*)",
+      "dest": "server/server.js"
+    },
+    {
+      "src": "/expenses(.*)",
+      "dest": "server/server.js"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "client/build/static/$1"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "client/build/manifest.json"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "client/build/robots.txt"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "client/build/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
